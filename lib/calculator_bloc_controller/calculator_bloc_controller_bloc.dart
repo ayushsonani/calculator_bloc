@@ -43,10 +43,6 @@ class Calculator_bloc_controllerBloc extends Bloc<Calculator_bloc_controllerEven
 
   }
 
-
-
-
-
   void _init(InitEvent event, Emitter<Calculator_bloc_controllerState> emit) async {
     emit(state.clone());
   }

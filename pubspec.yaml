@@ -38,6 +38,7 @@ dependencies:
   bloc:
   flutter_bloc:
   math_expressions:
+  flutter_advanced_switch: ^3.0.1
 
 dev_dependencies:
   flutter_test:
