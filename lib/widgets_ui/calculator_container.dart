@@ -9,7 +9,7 @@ import '../screens/calculator_page.dart';
 
 class CalculatorContainer extends StatelessWidget {
 
-  Color color=Colors.blue;
+  Color color=Colors.white;
   String name= "0";
   CalculatorContainer({ required this.color, required this.name});
 
@@ -25,8 +25,8 @@ class CalculatorContainer extends StatelessWidget {
         Calculator_bloc_controllerPage.bloc.add(NumberInsert(numberstring: name));
       },
       child: Container(
-        height: 70,
-        width: 70,
+        height: 60,
+        width: 60,
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: this.color,

@@ -17,115 +17,118 @@ class CalculatorButtons extends StatelessWidget {
           final bloc = BlocProvider.of<Calculator_bloc_controllerBloc>(context);
 
           return Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "AC",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "%",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "<=",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "/",
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "7",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "8",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "9",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "*",
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "4",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "5",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "6",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "-",
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "1",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "2",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "3",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "+",
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "00",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "0",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: ".",
-                    ),
-                    CalculatorContainer(
-                      color: Colors.blue,
-                      name: "=",
-                    ),
-                  ],
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CalculatorContainer(
+                        color: Colors.white,
+                        name: "AC",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "%",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "<=",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "/",
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "7",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "8",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "9",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "*",
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "4",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "5",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "6",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "-",
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "1",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "2",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "3",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "+",
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "00",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "0",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: ".",
+                      ),
+                      CalculatorContainer(
+                        color: Colors.blue,
+                        name: "=",
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           );
         },

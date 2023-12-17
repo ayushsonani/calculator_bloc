@@ -8,3 +8,7 @@ class NumberInsert extends Calculator_bloc_controllerEvent{
   NumberInsert({required this.numberstring});
 }
 
+class ThemeSet extends Calculator_bloc_controllerEvent{
+  bool theme = true;
+  ThemeSet({required this.theme});
+}
