@@ -4,13 +4,17 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Bloc StateManagment  
+</br>
+Theme Control 
+</br>
 
-A few resources to get you started if this is your first Flutter project:
+AdvancedSwitch
+</br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Figama Ui link := https://www.figma.com/file/SNdH1Z1pYM3RHn0SIUPPOw/Responsive-Calculator-App-(Community)?node-id=0%3A1&mode=dev
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+</br>
+
+https://github.com/ayushsonani/calculator_bloc/assets/145139790/f428e4ca-fde9-4913-bd5f-0f53f5020f40
+
