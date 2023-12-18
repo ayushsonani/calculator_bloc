@@ -33,122 +33,146 @@ class Calculator_bloc_controllerPage extends StatelessWidget {
     }
 
     fun();
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        actions: [
-          AdvancedSwitch(
-            controller: controller,
-            activeColor: Colors.green,
-            inactiveColor: Colors.grey,
-            activeChild: Text('Light',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.black)),
-            inactiveChild: Text('Night',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                )),
-            activeImage: NetworkImage(
-                "https://cdn.pixabay.com/photo/2014/05/18/00/33/sun-346710_1280.png"),
-            inactiveImage: NetworkImage(
-                "https://cdn.pixabay.com/photo/2017/03/23/17/02/night-2168868_1280.png"),
-            borderRadius: const BorderRadius.all(Radius.circular(1000)),
-            width: 100.0,
-            height: 45.0,
-            enabled: true,
-            disabledOpacity: 0.5,
-          ),
-          SizedBox(
-            width: 10,
-          )
-        ],
-      ),
-      body: BlocBuilder<Calculator_bloc_controllerBloc,
-          Calculator_bloc_controllerState>(
-        builder: (context, state) {
-          if (state is ThemeGet) {
-            print("theme state get");
-            return Column(
+    return BlocBuilder<Calculator_bloc_controllerBloc,Calculator_bloc_controllerState>(builder: (context, state) {
+      if(state is ThemeGet){
+
+
+         return Scaffold(
+            backgroundColor: state.backcolor,
+            appBar: AppBar(
+              actions: [
+                AdvancedSwitch(
+                  controller: controller,
+                  activeColor: Colors.green,
+                  inactiveColor: Colors.grey,
+                  activeChild: Text('Light',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.black)),
+                  inactiveChild: Text('Night',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      )),
+                  activeImage: NetworkImage(
+                      "https://cdn.pixabay.com/photo/2014/05/18/00/33/sun-346710_1280.png"),
+                  inactiveImage: NetworkImage(
+                      "https://cdn.pixabay.com/photo/2017/03/23/17/02/night-2168868_1280.png"),
+                  borderRadius: const BorderRadius.all(Radius.circular(1000)),
+                  width: 100.0,
+                  height: 45.0,
+                  enabled: true,
+                  disabledOpacity: 0.5,
+                ),
+                SizedBox(
+                  width: 10,
+                )
+              ],
+            ),
+            body: Column(
               children: [
                 Flexible(
                     flex: 3,
                     child: Container(
-                      color: state.theme ? Colors.white : Colors.black,
+                      color: state.backcolor,
                       alignment: Alignment.bottomRight,
                       child: BlocBuilder<Calculator_bloc_controllerBloc,
                           Calculator_bloc_controllerState>(
-                        builder: (context, state) {
+                        builder: (context, state2) {
                           print("state is := $state");
-                          if (state is TotalNumber) {
-                            User = state.answer;
+                          if (state2 is TotalNumber) {
                             return Container(
                                 margin: EdgeInsets.all(15),
                                 child: Text(
-                                  "${state.answer}",
+                                  "${state2.answer}",
                                   style: TextStyle(
-                                      fontSize: 35, color: Colors.white),
+                                      fontSize: 35, color:state.textcolor ),
                                 ));
                           }
-                          return  Container(
+                          return Text("");
+                        },
+                      ),
+                    )),
+                Expanded(
+                    flex: 7,
+                    child: Container(
+                      decoration: BoxDecoration(
+
+                      ),
+                      child: CalculatorButtons(textcolor: state.textcolor
+                          ,color: state.buttoncolor),
+                    )),
+              ],
+            ),
+          );
+      }
+      else{
+        return Scaffold(
+          backgroundColor: Color(0xFFF1F1F3),
+          appBar: AppBar(
+            actions: [
+              AdvancedSwitch(
+                controller: controller,
+                activeColor: Colors.green,
+                inactiveColor: Colors.grey,
+                activeChild: Text('Light',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.black)),
+                inactiveChild: Text('Night',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    )),
+                activeImage: NetworkImage(
+                    "https://cdn.pixabay.com/photo/2014/05/18/00/33/sun-346710_1280.png"),
+                inactiveImage: NetworkImage(
+                    "https://cdn.pixabay.com/photo/2017/03/23/17/02/night-2168868_1280.png"),
+                borderRadius: const BorderRadius.all(Radius.circular(1000)),
+                width: 100.0,
+                height: 45.0,
+                enabled: true,
+                disabledOpacity: 0.5,
+              ),
+              SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+          body: Column(
+            children: [
+              Flexible(
+                  flex: 3,
+                  child: Container(
+                    color: Color(0xFFF1F1F3),
+                    alignment: Alignment.bottomRight,
+                    child: BlocBuilder<Calculator_bloc_controllerBloc,
+                        Calculator_bloc_controllerState>(
+                      builder: (context, state) {
+                        print("state is := $state");
+                        if (state is TotalNumber) {
+                          return Container(
                               margin: EdgeInsets.all(15),
                               child: Text(
-                                "${Calculator_bloc_controllerPage.userinsert}",
+                                "${state.answer}",
                                 style: TextStyle(
-                                    fontSize: 35,  color: Colors.black),
+                                    fontSize: 35, color: Colors.black,
+                                ),
                               ));
-                        },
-                      ),
-                    )),
-                Expanded(
-                    flex: 7,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(50),topRight: Radius.circular(50)),
-                        color: Colors.white.withOpacity(0.25),
-                      ),
-                      child: CalculatorButtons(),
-                    )),
-              ],
-            );
-          } else {
-            return Column(
-              children: [
-                Flexible(
-                    flex: 3,
-                    child: Container(
-                      color: Colors.black,
-                      alignment: Alignment.bottomRight,
-                      child: BlocBuilder<Calculator_bloc_controllerBloc,
-                          Calculator_bloc_controllerState>(
-                        builder: (context, state) {
-                          print("state is := $state");
-                          if (state is TotalNumber) {
-                            return Container(
-                                margin: EdgeInsets.all(15),
-                                child: Text(
-                                  "${state.answer}",
-                                  style: TextStyle(
-                                      fontSize: 35, color: Colors.white),
-                                ));
-                          }
-                          return Text("gghg");
-                        },
-                      ),
-                    )),
-                Expanded(
-                    flex: 7,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(50),topRight: Radius.circular(50)),
-                      color: Colors.white.withOpacity(0.25),
-                      ),
-                      child: CalculatorButtons(),
-                    )),
-              ],
-            );
-          }
-        },
-      ),
-    );
+                        }
+                        return Text("");
+                      },
+                    ),
+                  )),
+              Expanded(
+                  flex: 7,
+                  child: Container(
+                    decoration: BoxDecoration(
+
+                    ),
+                    child: CalculatorButtons(textcolor: Colors.white,
+                      color: Colors.white,),
+                  )),
+            ],
+          ),
+        );
+      }
+    },);
   }
 }

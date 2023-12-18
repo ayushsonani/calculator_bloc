@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:calculator_using_bloc/calculator_bloc_controller/calculator_bloc_controller_event.dart';
+import 'package:flutter/material.dart';
 
 class Calculator_bloc_controllerState {
   Calculator_bloc_controllerState init() {
@@ -17,7 +20,10 @@ class TotalNumber extends Calculator_bloc_controllerState{
 
 class ThemeGet  extends Calculator_bloc_controllerState{
   bool theme = true;
-  ThemeGet({required this.theme});
+  Color buttoncolor = Colors.white;
+  Color textcolor = Colors.black;
+  Color backcolor = Colors.white;
+  ThemeGet({required this.theme,required this.textcolor,required this.buttoncolor,required this.backcolor});
 }
 
 

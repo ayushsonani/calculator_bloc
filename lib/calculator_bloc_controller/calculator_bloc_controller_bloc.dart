@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 import '../screens/calculator_page.dart';
@@ -7,11 +10,12 @@ import 'calculator_bloc_controller_state.dart';
 
 class Calculator_bloc_controllerBloc extends Bloc<Calculator_bloc_controllerEvent, Calculator_bloc_controllerState> {
   Calculator_bloc_controllerBloc() : super(Calculator_bloc_controllerState().init()) {
-    on<InitEvent>(_init);
+    on<InitEvent>((event, emit) {
+      print("init state");
+
+    },);
     on<NumberInsert>((event, emit) {
       String temp = Calculator_bloc_controllerPage.userinsert;
-
-
       if(event.numberstring=="="){
         Parser p = Parser();
         print("allnumbner := ${temp}");
@@ -24,7 +28,7 @@ class Calculator_bloc_controllerBloc extends Bloc<Calculator_bloc_controllerEven
         Calculator_bloc_controllerPage.userinsert = "";
         temp = "";
       }
-      else if(event.numberstring=="AC"){
+      else if(event.numberstring=="C"){
         Calculator_bloc_controllerPage.userinsert = "";
         emit(TotalNumber(answer: Calculator_bloc_controllerPage.userinsert));
       }
@@ -42,7 +46,14 @@ class Calculator_bloc_controllerBloc extends Bloc<Calculator_bloc_controllerEven
     });
     on<ThemeSet>((event, emit) {
       print("Theme is := ${event.theme}");
-      emit(ThemeGet(theme: event.theme));
+      emit(ThemeGet(
+          textcolor: event.theme?Colors.black:Colors.white,
+          buttoncolor: Colors.white,
+          backcolor: event.theme?Color(0xFFF1F1F3):Color(0xFF16171C),
+          theme: event.theme));
+
+
+
     });
   }
 
