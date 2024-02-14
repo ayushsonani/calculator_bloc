@@ -44,17 +44,7 @@ class Calculator_bloc_controllerBloc extends Bloc<Calculator_bloc_controllerEven
         emit(TotalNumber(answer: Calculator_bloc_controllerPage.userinsert));
       }
     });
-    on<ThemeSet>((event, emit) {
-      print("Theme is := ${event.theme}");
-      emit(ThemeGet(
-          textcolor: event.theme?Colors.black:Colors.white,
-          buttoncolor: Colors.white,
-          backcolor: event.theme?Color(0xFFF1F1F3):Color(0xFF16171C),
-          theme: event.theme));
 
-
-
-    });
   }
 
   void _init(InitEvent event, Emitter<Calculator_bloc_controllerState> emit) async {

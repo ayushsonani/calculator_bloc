@@ -42,7 +42,7 @@ class CalculatorContainer extends StatelessWidget {
         '${name}',
         textAlign: TextAlign.center,
         style: TextStyle(
-          color: Colors.black,
+          color: textcolor,
           fontSize: 32,
           fontFamily: 'Work Sans',
           fontWeight: FontWeight.w400,

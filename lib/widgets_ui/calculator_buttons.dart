@@ -8,8 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CalculatorButtons extends StatefulWidget {
 
-  Color textcolor = Colors.black;
-  Color color = Colors.white;
+  Color textcolor;
+  Color color;
 
    CalculatorButtons({required this.textcolor,required this.color});
 
@@ -27,7 +27,7 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
           final bloc = BlocProvider.of<Calculator_bloc_controllerBloc>(context);
 
           List button_name = ["C","+/-","%","/","7","8","9","*","4","5","6","-","1","2","3","+",".","0","<=","="];
-          print("colors := ${widget.textcolor.toString()}");
+          print("colors := ${widget.color.toString()}");
           return Container(
             child: Padding(
               padding: const EdgeInsets.all(8.0),

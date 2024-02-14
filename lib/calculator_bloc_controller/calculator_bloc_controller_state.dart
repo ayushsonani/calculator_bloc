@@ -18,13 +18,7 @@ class TotalNumber extends Calculator_bloc_controllerState{
   TotalNumber({required this.answer});
 }
 
-class ThemeGet  extends Calculator_bloc_controllerState{
-  bool theme = true;
-  Color buttoncolor = Colors.white;
-  Color textcolor = Colors.black;
-  Color backcolor = Colors.white;
-  ThemeGet({required this.theme,required this.textcolor,required this.buttoncolor,required this.backcolor});
-}
+
 
 
 
