@@ -48,6 +48,8 @@ class Calculator_bloc_controllerPage extends StatelessWidget {
          return Scaffold(
             backgroundColor: state.backcolor,
             appBar: AppBar(
+              backgroundColor: state.backcolor,
+
               actions: [
                 AdvancedSwitch(
                   controller: controller,
@@ -92,7 +94,7 @@ class Calculator_bloc_controllerPage extends StatelessWidget {
                                 child: Text(
                                   "${state2.answer}",
                                   style: TextStyle(
-                                      fontSize: 35, color:state.textcolor ),
+                                      fontSize: 50, color:state.textcolor ),
                                 ));
                           }
                           return Text("");
@@ -105,7 +107,7 @@ class Calculator_bloc_controllerPage extends StatelessWidget {
                       decoration: BoxDecoration(
 
                       ),
-                      child: CalculatorButtons(textcolor: state.textcolor
+                      child: CalculatorButtons(extButton: state.etxButton,textcolor: state.textcolor
                           ,color: state.buttoncolor),
                     )),
               ],

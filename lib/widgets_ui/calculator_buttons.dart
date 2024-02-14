@@ -10,8 +10,9 @@ class CalculatorButtons extends StatefulWidget {
 
   Color textcolor;
   Color color;
+  Color extButton;
 
-   CalculatorButtons({required this.textcolor,required this.color});
+   CalculatorButtons({required this.textcolor,required this.color,required this.extButton});
 
   @override
   State<CalculatorButtons> createState() => _CalculatorButtonsState();
@@ -39,22 +40,22 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                     children: [
                       CalculatorContainer(
                         textcolor: widget.textcolor,
-                        color:   Color(0xFFD2D3DA),
+                        color:   widget.extButton,
                         name: button_name[0],
                       ),
                       CalculatorContainer(
                         textcolor: widget.textcolor,
-                        color: Color(0xFFD2D3DA),
+                        color: widget.extButton,
                         name: button_name[1],
                       ),
                       CalculatorContainer(
                         textcolor: widget.textcolor,
-                        color: Color(0xFFD2D3DA),
+                        color: widget.extButton,
                         name: button_name[2],
                       ),
                       CalculatorContainer(
                         textcolor: widget.textcolor,
-                        color: Color(0xFF4B5EFC),
+                        color: widget.extButton,
                         name: button_name[3],
                       ),
                     ],

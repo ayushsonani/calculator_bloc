@@ -18,7 +18,9 @@ class ThemesBloc extends Bloc<ThemesEvent, ThemesState> {
       emit(ThemeGet(
           textcolor: event.theme?Colors.black:Colors.white,
           buttoncolor: event.theme?Colors.white:Colors.black,
-          backcolor: event.theme?Color(0xFFF1F1F3):Color(0xFF16171C),
+          backcolor: event.theme?Color(0xFFF1F2F3)
+              :Color(0xFF17171C),
+          etxButton: event.theme?Color(0xffd2d3da): Color(0xff4e505f),
           theme: event.theme));
     });
 
@@ -28,3 +30,4 @@ class ThemesBloc extends Bloc<ThemesEvent, ThemesState> {
     emit(state.clone());
   }
 }
+

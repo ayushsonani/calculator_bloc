@@ -16,5 +16,6 @@ class ThemeGet  extends ThemesState{
   Color buttoncolor;
   Color textcolor;
   Color backcolor;
-  ThemeGet({required this.theme,required this.textcolor,required this.buttoncolor,required this.backcolor});
+  Color etxButton;
+  ThemeGet({required this.theme,required this.textcolor,required this.buttoncolor,required this.backcolor,required this.etxButton});
 }
